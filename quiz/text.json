@@ -1,4 +1,5 @@
-[{
+{
+	"1" : {
 	"question": "Wiekszosc jakich zwierzat nie moze kierowac motorowka?",
 	"answers": [
 		"Chomik",
@@ -8,7 +9,7 @@
 	],
 	"correct_answer": 1
 },
-{
+	"2" : {
 	"question": "W jakim kraju znajduje sie najwyzszy budynek w Europie?",
 	"answers": [
 		"Francja",
@@ -18,19 +19,14 @@
 	],
 	"correct_answer": 3
 },
-{
-	"question": "what is the capital of poland?",
+	"3" : {
+	"question": "Ktora rzeka przepływa przez 10 krajow Europy?",
 	"answers": [
-		"Warsaw",
-		"New York",
-		"Radom",
-		"Poznan"
+		"Wisla",
+		"Dunaj",
+		"Ren",
+		"Bzura"
 	],
-	"correct_answer": 0
+	"correct_answer": 2
 }
-
-
-
-
-
-]
+}
