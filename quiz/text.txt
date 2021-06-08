@@ -1,13 +1,36 @@
-ile powtórzeń = x
-długość listy = y
-lista = fib[]
-dla x = 1 - 0
-dla x = 2 - 1
------<
-jesli x większe niż y+1
-    x-1
-    >----
+[{
+	"question": "Wiekszosc jakich zwierzat nie moze kierowac motorowka?",
+	"answers": [
+		"Chomik",
+		"Swinka morska",
+		"Dorsz",
+		"Banan"
+	],
+	"correct_answer": 0
+},
+{
+	"question": "what is the capital of poland?",
+	"answers": [
+		"Warsaw",
+		"New York",
+		"Radom",
+		"Poznan"
+	],
+	"correct_answer": 0
+},
+{
+	"question": "what is the capital of poland?",
+	"answers": [
+		"Warsaw",
+		"New York",
+		"Radom",
+		"Poznan"
+	],
+	"correct_answer": 0
+}
 
-jeśli x == y+1 
-    fib.append(fib[y]+fib[y-1])
-0 1 1 2 3 5 8 13 21 34 55
+
+
+
+
+]
