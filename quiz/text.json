@@ -6,17 +6,17 @@
 		"Dorsz",
 		"Banan"
 	],
-	"correct_answer": 0
+	"correct_answer": 1
 },
 {
-	"question": "what is the capital of poland?",
+	"question": "W jakim kraju znajduje sie najwyzszy budynek w Europie?",
 	"answers": [
-		"Warsaw",
-		"New York",
-		"Radom",
-		"Poznan"
+		"Francja",
+		"Turcja",
+		"ZSRR",
+		"Polska"
 	],
-	"correct_answer": 0
+	"correct_answer": 3
 },
 {
 	"question": "what is the capital of poland?",
