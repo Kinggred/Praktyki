@@ -26,6 +26,37 @@
 		"Bzura"
 	],
 	"correct_answer": 2
- }
+ },	{
+	"question": "Jaka jest najczesciej odwiedzana atrakcja w Europie?",
+	"answers": 
+	[
+		"Krzywa wieza w Pizie",
+		"Schody hiszpanskie",
+		"Muzeum w Luvrze",
+		"Palac Kultury i Nauki w Warszawie"
+	],
+	"correct_answer": 2 
+},	{
+	"question": "W ktorym z tych krajow nie ma komarow?",
+	"answers": 
+	[
+		"Ukraina",
+		"Islandia",
+		"Norwegia",
+		"Grecja"
+	],
+	"correct_answer": 1
+},	{
+	"question": "Najwiekszy kosciol w Europie?",
+	"answers": 
+	[
+		"Bazylika Sw. Piotra w Watykanie",
+		"Katedra Notre Dame w Paryżu",
+		"Kosiol Sw. Ducha w Lowiczu",
+		"Bazylika Mariacka w Krakowie"
+	],
+	"correct_answer": 0
+}
+
 ]
 
