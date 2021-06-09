@@ -21,18 +21,18 @@ class Quiz:
     def was_used(self, num):
         i = 0
         while i < len(self.used)-1:
-            if(self.was_used[i] == num):
+            if(self.used[i] == num):
                 return True
             i+=1
         return False
 
     def get_rand_question(self):
-        lpyt = rd.randrange(0, len(self.file_load(0 ,True)))
-        if(self.was_used(lpyt)):
-            while self.was_used(lpyt):
-                lpyt = rd.randrange(0, len(self.file_load(0 ,True)))
-        self.qst_id = lpyt
-        self.was_used.append(lpyt)
+        rnd_qst = rd.randrange(0, len(self.file_load(0 ,True)))
+        if(self.was_used(rnd_qst)):
+            while self.was_used(rnd_qst):
+                rnd_qst = rd.randrange(0, len(self.file_load(0 ,True)))
+        self.qst_id = rnd_qst
+        self.used.append(rnd_qst)
         return self.qst_id
 
     def get_qst_data(self, what_to_return):
@@ -69,5 +69,5 @@ class Quiz:
 
 quiz1 = Quiz()
 
-while len(quiz1.was_used) <= len(quiz1.file_load(0, True)):
+while len(quiz1.used) <= len(quiz1.file_load(0, True)):
     quiz1.start()
