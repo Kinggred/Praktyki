@@ -61,7 +61,7 @@ class Quiz:
             return 'Poprawna Odpowiedź'
         return 'Błędna Odpowiedź'
 
-    def start(self):
+    def pytanie(self):
         self.zad_pyt()
         print(self.psz_odp())
             
@@ -69,5 +69,5 @@ class Quiz:
 
 quiz1 = Quiz()
 
-quiz1.start()
-
+while len(quiz1.bylo) <= len(quiz1.wgraj_plik(0 ,True)):
+    quiz1.pytanie()
