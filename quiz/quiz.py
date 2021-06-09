@@ -1,8 +1,6 @@
 import json as js
 import random as rd
 
-#import requests as rq
-#r = rq.get('https://raw.githubusercontent.com/Kinggred/Praktyki/quiz/quiz/text.json')
 
 class Quiz:
     def __init__(self):
@@ -49,17 +47,17 @@ class Quiz:
         print(self.get_qst_data('pyt') + '\n')
         i = 0
         q = self.get_qst_data('odp')
-        while i < 4:
+        while i < int(len(self.get_qst_data('odp'))):
             print(str(i+1)+': '+q[i])
             i+=1
         print('\n')
 
     def get_answer(self):
-        x = int(input('Wprowadź numer odpowiedzi: '))
-        y = int(self.get_qst_data('pop'))
-        while x > 4:
-            x = int(input('Wprowadź numer odpowiedzi: '))
-        if x == y:
+        i = input('Wprowadź numer odpowiedzi: ')
+        y = self.get_qst_data('pop')
+        while i > str(len(self.get_qst_data('odp'))) or i == None:
+            i = int(input('Wprowadź numer odpowiedzi: '))
+        if i == y:
             return 'Poprawna Odpowiedź'
 
         return 'Błędna Odpowiedź'
