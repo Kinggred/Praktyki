@@ -57,8 +57,11 @@ class Quiz:
     def get_answer(self):
         x = int(input('Wprowadź numer odpowiedzi: '))
         y = int(self.get_qst_data('pop'))
+        while x > 4:
+            x = int(input('Wprowadź numer odpowiedzi: '))
         if x == y:
             return 'Poprawna Odpowiedź'
+
         return 'Błędna Odpowiedź'
 
     def start(self):
