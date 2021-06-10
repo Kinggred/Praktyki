@@ -2,14 +2,6 @@ import json as js
 import random as rd
 
 
-class File_load():
-    def load_json(self, path, type_of):
-        f = open(path, type_of)
-        q = js.loads(f.read())
-        f.close()
-        return q
-
-
 class Question:
     def __init__(self, dict_load):
         self.dict = dict_load
@@ -45,7 +37,14 @@ class Quiz:
             return True
 
 
-q = File_load().load_json("praktyki/062021/maks_grupinski/repo/quiz/text.json", "rt")
+def load_json(path, type_of):
+        f = open(path, type_of)
+        q = js.loads(f.read())
+        f.close()
+        return q
+
+
+q = load_json("praktyki/062021/maks_grupinski/repo/quiz/text.json", "rt")
 questions = q
 rng = Rng()
 quiz = Quiz()
