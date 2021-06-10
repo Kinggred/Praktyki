@@ -21,10 +21,7 @@ class Rng:
         return rd.randrange(0, len(range))
 
 
-class Quiz:
-    def __init__(self):
-        pass
-    
+class Quiz:    
     def question(self, question):
         print('\n' + question + '\n')
 
