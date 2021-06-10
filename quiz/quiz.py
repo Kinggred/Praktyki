@@ -1,12 +1,14 @@
 import json as js
 import random as rd
 
+
 class File_load():
     def load_json(self, path, type_of):
         f = open(path, type_of)
         q = js.loads(f.read())
         f.close()
         return q
+
 
 class Question:
     def __init__(self, dict_load):
@@ -32,7 +34,7 @@ class Quiz:
             i+=1
         print('\n')
 
-    def answer(self, cor_ans):
+    def given_ansver(self, cor_ans):
         if self.was_ans_cor(cor_ans, int(input('Podaj nr odpowiedzi:'))):
             print('\nPoprawna odpowiedź')
         else:
@@ -57,6 +59,6 @@ while len(questions) != 0:
     q_id = rng.get_qst(questions)
     quiz.question(questions[q_id].qst)
     quiz.answers(questions[q_id].ans, )
-    quiz.answer(questions[q_id].cor_ans)
+    quiz.given_ansver(questions[q_id].cor_ans)
 
     del questions[q_id]
