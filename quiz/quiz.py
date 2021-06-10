@@ -15,19 +15,41 @@ class Question:
         self.ans = self.dict['answers']
         self.cor_ans = self.dict['correct_answer']
 
-    def was_ans_cor(self, ans_nr):
-        if self.cor_ans == ans_nr:
-            return True
-
-class Quiz:
+    
+class Rng:
     def get_qst(self, range):
         return rd.randrange(0, len(range))
 
 
+class Quiz:
+    def __init__(self):
+        pass
+    
+    def question(self, question):
+        print('\n' + question + '\n')
+
+    def answers(self, answers):
+        i = 0
+        while i < len(answers):
+            print(str(i+1) + ' ' + answers[i])
+            i+=1
+        print('\n')
+
+    def answer(self, cor_ans):
+        if self.was_ans_cor(cor_ans, int(input('Podaj nr odpowiedzi:'))):
+            print('\nPoprawna odpowiedź')
+        else:
+            print('\nBłędna odpowiedź')
+
+    def was_ans_cor(self, cor_ans, ans_nr):
+        if cor_ans == ans_nr:
+            return True
+
 
 q = File_load().load_json("praktyki/062021/maks_grupinski/repo/quiz/text.json", "rt")
 questions = q
-qz = Quiz()
+rng = Rng()
+quiz = Quiz()
 i = 0
 
 while i < len(questions):
@@ -35,17 +57,9 @@ while i < len(questions):
     i+=1
 
 while len(questions) != 0:
-    q_id = qz.get_qst(questions)
-    print('\n' + questions[q_id].qst + '\n')
-    i = 0
-    while i < len(questions[q_id].ans):
-        print(str(i+1) + ' ' + questions[q_id].ans[i])
-        i+=1
-    print('\n')
-
-    if questions[q_id].was_ans_cor(int(input('Podaj nr odpowiedzi:'))):
-        print('\nPoprawna odpowiedź')
-    else:
-        print('\nBłędna odpowiedź')
+    q_id = rng.get_qst(questions)
+    quiz.question(questions[q_id].qst)
+    quiz.answers(questions[q_id].ans, )
+    quiz.answer(questions[q_id].cor_ans)
 
     del questions[q_id]
