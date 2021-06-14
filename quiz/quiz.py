@@ -34,9 +34,9 @@ questions =  load_json("questions.json")
 questions = [Question(questions[question]) for question in range(len(questions))]
 
 while len(questions) != 0:
-    q_id = random.randrange(0, len(questions))
-    questions[q_id].question()
-    questions[q_id].answers()
-    questions[q_id].given_answer()
+    question_id = random.randrange(0, len(questions))
+    questions[question_id].question()
+    questions[question_id].answers()
+    questions[question_id].given_answer()
 
-    del questions[q_id]
+    del questions[question_id]
