@@ -1,5 +1,5 @@
-import json as js
-import random as rd
+import json 
+import random 
 
 
 class Question:
@@ -9,55 +9,38 @@ class Question:
         self.ans = self.dict['answers']
         self.cor_ans = self.dict['correct_answer']
 
-    
-class Rng:
-    def get_qst(self, range):
-        return rd.randrange(0, len(range))
+    def question(self):
+        print('\n' + self.qst + '\n')
 
-
-class Quiz:    
-    def question(self, question):
-        print('\n' + question + '\n')
-
-    def answers(self, answers):
+    def answers(self):
         i = 0
-        while i < len(answers):
-            print(str(i+1) + ' ' + answers[i])
+        while i < len(self.ans):
+            print(str(i+1) + ' ' + self.ans[i])
             i+=1
         print('\n')
 
-    def given_ansver(self, cor_ans):
-        if self.was_ans_cor(cor_ans, int(input('Podaj nr odpowiedzi:'))):
+    def given_answer(self):
+        if self.cor_ans == int(input('Podaj nr odpowiedzi:')):
             print('\nPoprawna odpowiedź')
         else:
             print('\nBłędna odpowiedź')
 
-    def was_ans_cor(self, cor_ans, ans_nr):
-        if cor_ans == ans_nr:
-            return True
-
 
 def load_json(path, type_of):
         f = open(path, type_of)
-        q = js.loads(f.read())
+        q = json.loads(f.read())
         f.close()
         return q
 
 
-q = load_json("praktyki/062021/maks_grupinski/repo/quiz/text.json", "rt")
-questions = q
-rng = Rng()
-quiz = Quiz()
-i = 0
+questions_js =  load_json("praktyki/062021/maks_grupinski/repo/quiz/text.json", "rt")
 
-while i < len(questions):
-    questions[i] = Question(q[i])
-    i+=1
+questions = [Question(questions_js[question]) for question in range(len(questions_js))]
 
 while len(questions) != 0:
-    q_id = rng.get_qst(questions)
-    quiz.question(questions[q_id].qst)
-    quiz.answers(questions[q_id].ans, )
-    quiz.given_ansver(questions[q_id].cor_ans)
+    q_id = random.randrange(0, len(questions))
+    questions[q_id].question()
+    questions[q_id].answers()
+    questions[q_id].given_answer()
 
     del questions[q_id]
