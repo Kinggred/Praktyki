@@ -4,10 +4,9 @@ import random
 
 class Question:
     def __init__(self, dict_load):
-        self.dict = dict_load
-        self.qst = self.dict['question']
-        self.ans = self.dict['answers']
-        self.cor_ans = self.dict['correct_answer']
+        self.qst = dict_load['question']
+        self.ans = dict_load['answers']
+        self.cor_ans = dict_load['correct_answer']
 
     def question(self):
         print('\n' + self.qst + '\n')
@@ -25,17 +24,14 @@ class Question:
         else:
             print('\nBłędna odpowiedź')
 
-
-def load_json(path, type_of):
-        f = open(path, type_of)
-        q = json.loads(f.read())
-        f.close()
-        return q
+def load_json(path):
+        with open("praktyki/062021/maks_grupinski/repo/quiz/" + path) as f:
+            return json.loads(f.read())
 
 
-questions_js =  load_json("praktyki/062021/maks_grupinski/repo/quiz/text.json", "rt")
+questions =  load_json("questions.json")
 
-questions = [Question(questions_js[question]) for question in range(len(questions_js))]
+questions = [Question(questions[question]) for question in range(len(questions))]
 
 while len(questions) != 0:
     q_id = random.randrange(0, len(questions))
