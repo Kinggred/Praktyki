@@ -12,21 +12,18 @@ class Question:
         print('\n' + self.qst + '\n')
 
     def answers(self):
-        i = 0
-        while i < len(self.ans):
-            print(str(i+1) + ' ' + self.ans[i])
-            i+=1
-        print('\n')
+        for answer in range(len(self.ans)):     
+            print(str(answer+1) + ' ' + self.ans[answer])
 
     def given_answer(self):
-        if self.cor_ans == int(input('Podaj nr odpowiedzi:')):
+        if self.cor_ans == int(input('\nPodaj nr odpowiedzi:')):
             print('\nPoprawna odpowiedź')
         else:
             print('\nBłędna odpowiedź')
 
 def load_json(path):
-        with open("praktyki/062021/maks_grupinski/repo/quiz/" + path) as f:
-            return json.loads(f.read())
+        with open("praktyki/062021/maks_grupinski/repo/quiz/" + path) as file:
+            return json.loads(file.read())
 
 
 questions =  load_json("questions.json")
