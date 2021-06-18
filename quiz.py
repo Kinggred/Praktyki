@@ -1,16 +1,16 @@
 import json
 import random
+import os
 
 from simpleton.question import Question
 
 
 def load_json(path):
-    with open("/home/user/praktyki/062021/maks_grupinski/repo/simpleton/" +
-              path) as file:
+    with open(os.getcwd() + path) as file:
         return json.loads(file.read())
 
 
-questions = load_json("quiz.json")
+questions = load_json("/quiz.json")
 
 questions = [
     Question(questions[question]) for question in range(len(questions))
