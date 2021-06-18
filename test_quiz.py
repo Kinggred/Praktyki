@@ -1,6 +1,6 @@
 import pytest
 
-from simpleton import Question
+from simpleton.question import Question
 
 @pytest.fixture()
 def dict_load():
@@ -15,7 +15,13 @@ def dict_load():
     }
     return diction
 
+
 def test_class_returning_proper_values(dict_load):
     quiz = Question(dict_load)
-    assert quiz.qst == 'question' and len(quiz.ans) == 3 and quiz.cor_ans == 'correct answer'
+    assert quiz.qst == 'question'
+    assert len(quiz.ans) == 3
+    assert quiz.cor_ans == 'correct answer'
 
+
+def test_does_function_check_values_properlu():
+    pass
