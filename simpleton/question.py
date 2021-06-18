@@ -12,8 +12,5 @@ class Question:
                                      1) + ' ' + self.ans[answer] + '\n'
         return self.answers_text
 
-    def given_answer(self):
-        if self.cor_ans == int(input('Podaj nr odpowiedzi:')):
-            print('\nPoprawna odpowiedź')
-        else:
-            print('\nBłędna odpowiedź')
+    def given_answer(self, check_answer):
+        return self.cor_ans == int(check_answer)

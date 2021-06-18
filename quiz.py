@@ -20,6 +20,10 @@ while len(questions) != 0:
     question_id = random.randrange(0, len(questions))
     print(questions[question_id].question_text)
     print(questions[question_id].answers)
-    questions[question_id].given_answer()
+    if (questions[question_id].given_answer(
+            input('Podaj numer odpowiedzi: '))):
+        print('Poprawna odpowiedź')
+    else:
+        print('Błędna odpowiedź')
 
     del questions[question_id]
